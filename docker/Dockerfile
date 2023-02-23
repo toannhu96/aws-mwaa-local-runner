@@ -44,5 +44,8 @@ EXPOSE 8080 5555 8793
 
 USER airflow
 WORKDIR ${AIRFLOW_USER_HOME}
+
+RUN pip install --no-cache-dir --user authlib
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["local-runner"]
